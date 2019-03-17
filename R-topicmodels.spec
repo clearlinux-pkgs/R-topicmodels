@@ -4,16 +4,13 @@
 #
 Name     : R-topicmodels
 Version  : 0.2.8
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/topicmodels_0.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/topicmodels_0.2-8.tar.gz
 Summary  : Topic Models
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-topicmodels-lib = %{version}-%{release}
-Requires: R-modeltools
-Requires: R-slam
-Requires: R-tm
 BuildRequires : R-modeltools
 BuildRequires : R-slam
 BuildRequires : R-tm
@@ -21,10 +18,7 @@ BuildRequires : buildreq-R
 BuildRequires : gsl-dev
 
 %description
-Allocation (LDA) models and Correlated Topics Models
-	     (CTM) by David M. Blei and co-authors and the C++ code
-	     for fitting LDA models using Gibbs sampling by Xuan-Hieu
-	     Phan and co-authors.
+No detailed description available
 
 %package lib
 Summary: lib components for the R-topicmodels package.
@@ -42,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1545405935
+export SOURCE_DATE_EPOCH=1552843069
 
 %install
-export SOURCE_DATE_EPOCH=1545405935
+export SOURCE_DATE_EPOCH=1552843069
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library topicmodels|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  topicmodels || :
 
 
 %files
@@ -115,7 +108,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/topicmodels/help/topicmodels.rdx
 /usr/lib64/R/library/topicmodels/html/00Index.html
 /usr/lib64/R/library/topicmodels/html/R.css
-/usr/lib64/R/library/topicmodels/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
