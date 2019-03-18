@@ -4,16 +4,22 @@
 #
 Name     : R-topicmodels
 Version  : 0.2.8
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/topicmodels_0.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/topicmodels_0.2-8.tar.gz
 Summary  : Topic Models
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-topicmodels-lib = %{version}-%{release}
+Requires: R-NLP
+Requires: R-Rcpp
+Requires: R-xml2
+BuildRequires : R-NLP
+BuildRequires : R-Rcpp
 BuildRequires : R-modeltools
 BuildRequires : R-slam
 BuildRequires : R-tm
+BuildRequires : R-xml2
 BuildRequires : buildreq-R
 BuildRequires : gsl-dev
 
@@ -36,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552843069
+export SOURCE_DATE_EPOCH=1552926048
 
 %install
-export SOURCE_DATE_EPOCH=1552843069
+export SOURCE_DATE_EPOCH=1552926048
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
