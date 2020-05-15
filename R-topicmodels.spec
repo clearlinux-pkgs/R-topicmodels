@@ -4,7 +4,7 @@
 #
 Name     : R-topicmodels
 Version  : 0.2.11
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/topicmodels_0.2-11.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/topicmodels_0.2-11.tar.gz
 Summary  : Topic Models
@@ -21,7 +21,10 @@ BuildRequires : buildreq-R
 BuildRequires : gsl-dev
 
 %description
-No detailed description available
+Allocation (LDA) models and Correlated Topics Models
+	     (CTM) by David M. Blei and co-authors and the C++ code
+	     for fitting LDA models using Gibbs sampling by Xuan-Hieu
+	     Phan and co-authors.
 
 %package lib
 Summary: lib components for the R-topicmodels package.
@@ -33,21 +36,22 @@ lib components for the R-topicmodels package.
 
 %prep
 %setup -q -c -n topicmodels
+cd %{_builddir}/topicmodels
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587405022
+export SOURCE_DATE_EPOCH=1589581384
 
 %install
-export SOURCE_DATE_EPOCH=1587405022
+export SOURCE_DATE_EPOCH=1589581384
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
