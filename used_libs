@@ -1,7 +1,7 @@
 libR.so
 libc.so.6
 libgcc_s.so.1
-libgsl.so.25
+libgsl.so.27
 libgslcblas.so.0
 libm.so.6
 libstdc++.so.6
