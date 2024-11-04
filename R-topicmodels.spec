@@ -7,7 +7,7 @@
 #
 Name     : R-topicmodels
 Version  : 0.2.17
-Release  : 64
+Release  : 65
 URL      : https://cran.r-project.org/src/contrib/topicmodels_0.2-17.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/topicmodels_0.2-17.tar.gz
 Summary  : Topic Models
